@@ -1,31 +1,25 @@
-
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Keszlet keszlet = new Keszlet();
 
+        KeszTermek keszTermek = new KeszTermek("sajt", 1000, 2);
+        KeszTermek keszTermek2 = new KeszTermek("Alma", 100, 1);
+        KeszTermek keszTermek3 = new KeszTermek("Körte", 200, 3);
+        List <KeszTermek> keszTermekList = new ArrayList<>();
+        keszTermekList.add(keszTermek);
+        keszTermekList.add(keszTermek2);
+        keszTermekList.add(keszTermek3);
 
-        System.out.println("mi a neve?");
-        String nev = scanner.nextLine();
-        System.out.println("mi az ára?");
-        int ar = scanner.nextInt();
-        System.out.println("mi a kódja?");
-        int kod = scanner.nextInt();
-        System.out.println("mi a kiszerelése?");
-        int kiszereles = scanner.nextInt();
-        System.out.println("mi a csomagtartalma?");
-        double csomagTartalom = scanner.nextDouble();
-        System.out.println("mi a mértékegysége?");
-        String mertekegyseg = scanner.next();
+        Rendeles rendeles = new Rendeles();
+        rendeles.addRendeltArucikk(1, 2, keszTermekList);
+        rendeles.addRendeltArucikk(2, 3, keszTermekList);
+        rendeles.addRendeltArucikk(3, 4, keszTermekList);
+        System.out.println(rendeles.toString(keszTermekList));
 
-        keszlet.add(nev, ar, kod, kiszereles, csomagTartalom, mertekegyseg);
-        keszlet.add("Alma", 100, 1, 1, 0.5, "kg");
-        keszlet.add("Körte", 200, 2, 1, 0.5, "kg");
-        
-        
-        System.out.println(keszlet);
         
         scanner.close();
     }

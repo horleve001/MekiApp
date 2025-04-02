@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class KeszTermek {
     private final String nev;
     private int ar;

@@ -17,6 +17,23 @@ public class Keszlet {
         return true;
         
     }
+    public boolean add(NyersAru aru) {
+        for(NyersAru n : keszlet) {
+            if(n.getKod() == aru.getKod()) {
+                return false;
+            }
+        }
+        keszlet.add(aru);
+        return true;
+    }
+    public NyersAru get(int kod) {
+        for(NyersAru n : keszlet) {
+            if(n.getKod() == kod) {
+                return n;
+            }
+        }
+        return null;
+    }
     public boolean remove(int kod) {
         for(NyersAru n : keszlet) {
             if(n.getKod() == kod) {
